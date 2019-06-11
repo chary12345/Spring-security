@@ -5,7 +5,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 ${userList.lname}
 ${userList.mailid}
 ${userList.password}
