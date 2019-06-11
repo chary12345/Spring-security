@@ -43,8 +43,9 @@ public class LoginController {
 			return "login";
 		}else{
 			logger.debug("login credentials valid "+mailid + "  and" +password);
+			//m.addAttribute("list",list);
 			
-			Query queryallusers = session.createQuery("from UserPojo");
+		/*	Query queryallusers = session.createQuery("from UserPojo");
 			
 			List<UserPojo> userList = queryallusers.list();
 			
@@ -54,8 +55,32 @@ public class LoginController {
 				System.out.println("location is"+userPojo.getLocation());
 			}
 			m.addAttribute("userList",userList);//userlist is refference of userpojo in for each
-			return "profile";
+			session.close();*/
+			return "success";
 		
 		}
+	
+			
+		}
+	
+	
+	@RequestMapping(value="/fetchAllRecords")
+	public String getAllRecords(Model m) {
+		SessionFactory sf = new Configuration().configure().buildSessionFactory();
+		Session session = sf.openSession();
+		Query queryallusers = (Query) session.createQuery("from UserPojo");
+		
+		List<UserPojo> allusers = queryallusers.list();
+		for (UserPojo userPojo : allusers) {
+			System.out.println(userPojo.getFname()+" "+userPojo.getLname()+"||"+userPojo.getMailid());
+			System.out.println("|| || || ||");
+			System.out.println(userPojo.getMobileno());
+		}
+		/**/
+		m.addAttribute("userList",allusers);
+		session.beginTransaction().commit();
+		session.close();
+		return "profile";
+		
 	}
 }
