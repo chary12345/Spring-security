@@ -1,0 +1,4 @@
+com\springframeworks\pojos\UserPojo.class
+com\springframeworks\daoimpl\RegisterDaoImpl.class
+com\springframeworks\controllers\RegisterController.class
+com\springframeworks\controllers\LoginController.class
