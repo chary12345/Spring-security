@@ -17,6 +17,7 @@ ${message}
 			type="text" name="location" /><br /> <br /> <input type="submit"
 			value="register" />
 	</form>
+	<a href="login.jsp">login</a>|  
 
 </body>
 </html>

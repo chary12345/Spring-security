@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.springframeworks.pojos.UserPojo;
 
 @Controller
-public class LoginController {
+public class LoginController { 
 	final static Logger logger = Logger.getLogger(LoginController.class);
 
 	@SuppressWarnings("deprecation")
